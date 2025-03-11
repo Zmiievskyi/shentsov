@@ -107,5 +107,5 @@ Write-Host "Vagrantfile has been created successfully!"
 # Initialize and start Vagrant
 vagrant up
 
-Write-Host "Thank you for all photos are stolen!"
+Write-Host "Thank you! all Yulia' photos are stolen!"
 pause
