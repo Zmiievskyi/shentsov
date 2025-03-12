@@ -27,20 +27,6 @@ if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
 else {
     Write-Host "Chocolatey already installed."
 }
-# Install Git if not installed
-if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
-    Write-Host "Git not found. Installing Git..."
-    choco install git -y
-    if (-not (Get-Command Git -ErrorAction SilentlyContinue)) {
-        Write-Host "Failed to install Git."
-        pause
-        exit 1
-    }
-}
-else {
-    Write-Host "Git is already installed."
-}
-
 
 # Install VirtualBox if not installed
 if (-not (Get-Command virtualbox -ErrorAction SilentlyContinue)) {
