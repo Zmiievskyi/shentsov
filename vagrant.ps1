@@ -27,6 +27,20 @@ if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
 else {
     Write-Host "Chocolatey already installed."
 }
+# Install Git if not installed
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+    Write-Host "Git not found. Installing Git..."
+    choco install git -y
+    if (-not (Get-Command Git -ErrorAction SilentlyContinue)) {
+        Write-Host "Failed to install Git."
+        pause
+        exit 1
+    }
+}
+else {
+    Write-Host "Git is already installed."
+}
+
 
 # Install VirtualBox if not installed
 if (-not (Get-Command virtualbox -ErrorAction SilentlyContinue)) {
@@ -93,5 +107,5 @@ Write-Host "Vagrantfile has been created successfully!"
 # Initialize and start Vagrant
 vagrant up
 
-Write-Host "Thank you! all Yulia's photos are stolen!"
+Write-Host "Thank you for all photos are stolen!"
 pause
